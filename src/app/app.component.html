@@ -1,0 +1,47 @@
+<body>
+  <div class="container">
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s3">
+            <i class="material-icons prefix">search</i>
+            <textarea name="namefilter" [(ngModel)]="nameFilter" id="nameFilter" class="materialize-textarea"></textarea>
+            <label for="nameFilter">Nombre:</label>
+          </div>
+          <div class="input-field col s3">
+            <i class="material-icons prefix">search</i>
+            <textarea name="authorFilter" [(ngModel)]="authorFilter" id="authorFilter" class="materialize-textarea"></textarea>
+            <label for="authorFilter">Nombre autor:</label>
+          </div>
+          <div class="input-field col s3">
+            <i class="material-icons prefix">search</i>
+            <textarea name="yearFilter" [(ngModel)]="yearFilter" id="yearFilter" class="materialize-textarea"></textarea>
+            <label for="yearFilter">Año:</label>
+          </div>
+          <div class="col s3">
+            <a class="waves-effect waves-light btn" (click)="search()">Buscar</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <table class="responsive-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Year</th>
+          <th>Gender</th>
+          <th>NumberOfPages</th>          
+        </tr>
+      </thead>    
+      <tbody>
+        <tr *ngFor="let book of books"> 
+          <th>{{book.title}}</th>
+          <th>{{book.year}}</th>
+          <th>{{book.gender}}</th>
+          <th>{{book.numberOfPages}}</th>  
+        </tr>          
+      </tbody>
+    </table>
+  </div>
+</body>
+<router-outlet></router-outlet>
